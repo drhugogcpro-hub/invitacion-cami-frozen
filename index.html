@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felices 4 Años Cami! - Invitación Mágica ❄️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --frozen-ice: #a8e6ff;
+            --frozen-cyan: #4fc3f7;
+            --frozen-deep: #0288d1;
+            --frozen-night: #0d47a1;
+            --frozen-magic: #7c4dff;
+            --frozen-gold: #ffd700;
+            --frozen-silver: #e0e0e0;
+            --frozen-white: #ffffff;
+            --frozen-pink: #f8bbd0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(180deg, #0a1628 0%, #1a237e 30%, #0d47a1 60%, #01579b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(124, 77, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 30%, rgba(79, 195, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(168, 230, 255, 0.08) 0%, transparent 50%);
+            animation: aurora 8s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes aurora {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1em;
+            animation: fall linear infinite;
+            z-index: 1;
+            pointer-events: none;
+            text-shadow: 0 0 5px rgba(168, 230, 255, 0.8);
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--frozen-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--frozen-gold), 0 0 20px var(--frozen-ice);
+            animation: sparkleAnim 3s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes sparkleAnim {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .invitation-container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            max-width: 480px;
+            width: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid rgba(168, 230, 255, 0.3);
+            box-shadow: 
+                0 0 40px rgba(79, 195, 247, 0.2),
+                0 0 80px rgba(124, 77, 255, 0.1),
+                inset 0 0 60px rgba(255, 255, 255, 0.05);
+            z-index: 2;
+            position: relative;
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(0, 102, 204, 0.3));
+            padding: 35px 20px 30px 20px;
+            color: white;
+            position: relative;
+            text-align: center;
+            border-bottom: 1px solid rgba(168, 230, 255, 0.2);
+        }
+
+        .header-banner h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            color: var(--frozen-gold);
+        }
+
+        .header-banner p {
+            font-size: 15px;
+            opacity: 0.95;
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            color: var(--frozen-ice);
+        }
+
+        .age-badge-container {
+            text-align: center;
+            margin-top: -35px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .age-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--frozen-cyan), var(--frozen-deep));
+            border-radius: 50%;
+            border: 3px solid var(--frozen-gold);
+            box-shadow: 0 0 20px rgba(79, 195, 247, 0.5), 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .age-badge span {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 20px 20px 10px 20px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(79, 195, 247, 0.3);
+            border: 2px solid rgba(168, 230, 255, 0.4);
+            background: linear-gradient(135deg, #0a1628, #1a237e);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            border: none;
+        }
+
+        .video-label {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--frozen-ice);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        /* Fallback link */
+        .video-fallback {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .video-fallback a {
+            color: var(--frozen-gold);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--frozen-gold);
+            padding-bottom: 2px;
+        }
+
+        .video-fallback a:hover {
+            color: var(--frozen-ice);
+            border-bottom-color: var(--frozen-ice);
+        }
+
+        .countdown-section {
+            padding: 15px 25px 25px 25px;
+        }
+
+        .countdown-title {
+            text-align: center;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 18px;
+            color: var(--frozen-gold);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .countdown-box {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, rgba(168, 230, 255, 0.15), rgba(124, 77, 255, 0.1));
+            padding: 20px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(168, 230, 255, 0.3);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .countdown-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .countdown-item:not(:last-child)::after {
+            content: ":";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-70%);
+            color: var(--frozen-cyan);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .countdown-number {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--frozen-ice);
+            display: block;
+            text-shadow: 0 0 15px rgba(168, 230, 255, 0.5);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--frozen-cyan);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .details-section {
+            padding: 0 25px 25px 25px;
+        }
+
+        .info-grid {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(168, 230, 255, 0.05));
+            padding: 25px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(168, 230, 255, 0.2);
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--frozen-white);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .info-item:not(:last-child) {
+            border-bottom: 1px solid rgba(168, 230, 255, 0.15);
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-item strong {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--frozen-gold);
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .info-item span {
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .dresscode-section {
+            padding: 0 25px 25px 25px;
+        }
+
+        .dresscode-box {
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.15), rgba(168, 230, 255, 0.1));
+            padding: 25px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(124, 77, 255, 0.3);
+            text-align: center;
+        }
+
+        .dresscode-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 18px;
+            color: var(--frozen-gold);
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .dresscode-text {
+            color: var(--frozen-white);
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .dresscode-highlight {
+            color: var(--frozen-pink);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(248, 187, 208, 0.3);
+        }
+
+        .dresscode-note {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--frozen-cyan);
+            font-style: italic;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px 15px;
+            border-radius: 12px;
+            border-left: 3px solid var(--frozen-gold);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 0 25px 25px 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-maps {
+            background: linear-gradient(135deg, var(--frozen-cyan), var(--frozen-deep));
+            color: white;
+        }
+
+        .btn-maps:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.4);
+        }
+
+        .hero-image-section {
+            padding: 0 25px 25px 25px;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(79, 195, 247, 0.2);
+            border: 2px solid rgba(168, 230, 255, 0.4);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero-image-caption {
+            margin-top: 12px;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 16px;
+            color: var(--frozen-gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .footer {
+            padding: 25px;
+            text-align: center;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.8), transparent);
+            border-top: 1px solid rgba(168, 230, 255, 0.1);
+        }
+
+        .footer-text {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 16px;
+            color: var(--frozen-ice);
+            text-shadow: 0 0 10px rgba(168, 230, 255, 0.3);
+            line-height: 1.6;
+        }
+
+        .footer-sub {
+            font-size: 13px;
+            color: var(--frozen-cyan);
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .header-banner h1 { font-size: 24px; }
+            .countdown-number { font-size: 28px; }
+            .age-badge { width: 65px; height: 65px; }
+            .age-badge span { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="snow-container"></div>
+    <div id="sparkle-container"></div>
+
+    <div class="invitation-container">
+        <div class="header-banner">
+            <h1>¡Una Aventura Congelada!</h1>
+            <p>Acompáñame a celebrar mi cumpleaños mágicamente</p>
+        </div>
+
+        <div class="age-badge-container">
+            <div class="age-badge">
+                <span>4</span>
+            </div>
+        </div>
+
+        <!-- Video de YouTube -->
+        <div class="video-section">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/Gf0NdhpAztA?si=iInaTgQ7u5MrsVGz&autoplay=1&mute=1&loop=1&playlist=Gf0NdhpAztA&rel=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-label">✨ Reproduciendo en bucle mágico ✨</p>
+            <div class="video-fallback">
+                <a href="https://youtu.be/Gf0NdhpAztA" target="_blank">▶️ Ver video en YouTube</a>
+            </div>
+        </div>
+
+        <div class="countdown-section">
+            <div class="countdown-title">⏳ Tiempo para la Magia ⏳</div>
+            <div class="countdown-box">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>❄ ¿Cuándo?</strong>
+                    <span>Sábado, 25 de Julio de 2026</span>
+                </div>
+                <div class="info-item">
+                    <strong>❄ ¿A qué hora?</strong>
+                    <span>3:00 PM a 6:00 PM</span>
+                </div>
+                <div class="info-item">
+                    <strong>❄ ¿Dónde?</strong>
+                    <span>McDonald's Muxbal<br>Ciudad de Guatemala</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dresscode-section">
+            <div class="dresscode-box">
+                <div class="dresscode-title">👗 Código de Vestimenta 👗</div>
+                <div class="dresscode-text">
+                    ¡Ven disfrazado de tu personaje favorito de <span class="dresscode-highlight">Frozen</span>!
+                </div>
+                <div class="dresscode-note">
+                    ❄️ Puedes vestirte de Anna, Olaf, Kristoff, Sven o cualquier otro personaje del reino.<br>
+                    <strong style="color: #ff6b6b;">✋ Por favor, evita el disfraz de Elsa</strong> — ¡ella ya estará presente en la fiesta! 👑
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://wa.me/50247396007?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20mágico%20de%20Cami%20🎂❄️" target="_blank" class="btn btn-whatsapp">
+                ✉ Confirmar Asistencia
+            </a>
+            <a href="https://maps.app.goo.gl/hJy2eLBJkujjNH5u9" target="_blank" class="btn btn-maps">
+                📍 Ver Ubicación del Reino
+            </a>
+        </div>
+
+        <div class="hero-image-section">
+            <img src="https://i.imgur.com/a71dm7X.png" alt="Cami con Elsa y Anna" class="hero-image">
+            <p class="hero-image-caption">¡Nuestra pequeña princesa del hielo! ❄️👑</p>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">"El frío nunca me molestó de todos modos"</p>
+            <p class="footer-sub">¡Te esperamos para celebrar juntos! ❄️👑</p>
+        </div>
+    </div>
+
+    <script>
+        function createSnowflakes() {
+            const container = document.getElementById('snow-container');
+            const snowflakes = ['❄', '❅', '❆', '✦', '✧', '⋆'];
+            for (let i = 0; i < 40; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.innerHTML = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                flake.style.left = Math.random() * 100 + '%';
+                flake.style.animationDuration = (Math.random() * 8 + 5) + 's';
+                flake.style.animationDelay = Math.random() * 10 + 's';
+                flake.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                flake.style.opacity = Math.random() * 0.6 + 0.2;
+                container.appendChild(flake);
+            }
+        }
+
+        function createSparkles() {
+            const container = document.getElementById('sparkle-container');
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                container.appendChild(sparkle);
+            }
+        }
+
+        const eventDate = new Date("2026-07-25T15:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-box").innerHTML = 
+                    "<div style='width:100%;text-align:center;'><span style='font-family:Cinzel Decorative,cursive;font-size:20px;color:#ffd700;text-shadow:0 0 15px rgba(255,215,0,0.5);'>¡Llegó el día mágico! 🎉<br>¡Te esperamos!</span></div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+
+        createSnowflakes();
+        createSparkles();
+    </script>
+</body>
+</html>
